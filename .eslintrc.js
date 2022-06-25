@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  ignorePatterns: ['**/*.test.tsx'],
+  ignorePatterns: ['**/*.test.tsx','**/*.stories.tsx'],
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/jsx-filename-extension': [0],
