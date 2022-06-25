@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import {AutoSizer, InfiniteLoader, Table, Column} from 'react-virtualized';
 import { generateFakeData } from './utils';
+import './App.css';
 
 function App() {
   const [rows,setRows]=useState(generateFakeData(200));
@@ -11,7 +12,7 @@ function App() {
   const handleLoadMoreRows=()=>new Promise((resolve)=>resolve([1,2,3]))
 
   return (
-    <div>
+    <div style={{display:'flex', flexDirection:'column'}}>
       <InfiniteLoader
         isRowLoaded={handleIsRowLoaded}
         loadMoreRows={handleLoadMoreRows}
@@ -27,7 +28,7 @@ function App() {
                 headerHeight={40}
                 width={width}
                 rowHeight={40}
-                height={400}
+                height={800}
                 rowCount={rows.length}
                 rowGetter={({ index }) => rows[index]}
               >
